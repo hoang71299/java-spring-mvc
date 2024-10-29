@@ -24,7 +24,7 @@
               <h3>Update User</h3>
               <hr>
               <form:form action="/admin/user/update" method="post" modelAttribute="newUser">
-                <div class="mb-3">
+                <div class="mb-3" style="display: none;">
                   <label for="form-label">ID:</label>
                   <form:input type="text" class="form-control" path="id" />
                 </div>
@@ -32,7 +32,6 @@
                   <label for="form-label">Email:</label>
                   <form:input type="email" class="form-control" path="email" />
                 </div>
-
                 <div class="mb-3">
                   <label for="form-label">Phone number:</label>
                   <form:input type="text" class="form-control" path="phone" />
