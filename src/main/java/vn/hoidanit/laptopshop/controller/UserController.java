@@ -54,9 +54,9 @@ public class UserController {
     return "admin/user/create";
   }
 
-  @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
-  public String createUserPage(Model model, @ModelAttribute("newUser") User hoidanit) {
-    this.userService.handleSaveUser(hoidanit);
-    return "redirect:/admin/user";
+  @RequestMapping("/admin/user/update/{id}")
+  public String getUserDetailPage(Model model) {
+    model.addAttribute("newUser", new User());
+    return "admin/user/update";
   }
 }
