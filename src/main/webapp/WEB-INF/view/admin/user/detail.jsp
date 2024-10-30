@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Hỏi Dân IT - Dự án laptopshop" />
         <meta name="author" content="Hỏi Dân IT" />
-        <title>Create user</title>
+        <title>Detail user</title>
 
         <link href="/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -28,36 +28,32 @@
                   <li class="breadcrumb-item" href="/admin">Dashboard</li>
                   <li class="breadcrumb-item active">Users</li>
                 </ol>
-                <div class=" mt-5">
+                <div class="container mt-5">
                   <div class="row">
-                    <div class="col-md-6 col-12 mx-auto">
-                      <h3>Create a user</h3>
-                      <hr>
-                      <form:form action="/admin/user/create" method="post" modelAttribute="newUser">
-                        <div class="mb-3">
-                          <label for="form-label">Email:</label>
-                          <form:input type="email" class="form-control" path="email" />
+                    <div class="col-12 mx-auto">
+                      <div class="d-flex justify-content-between">
+                        <h3>User detail with id = ${id}</h3>
+                      </div>
+
+                      <hr />
+
+                      <div class="card" style="width: 60%">
+                        <div class="card-header">
+                          User information
                         </div>
-                        <div class="mb-3">
-                          <label for="form-label">Password:</label>
-                          <form:input type="password" class="form-control" path="password" />
-                        </div>
-                        <div class="mb-3">
-                          <label for="form-label">Phone number:</label>
-                          <form:input type="text" class="form-control" path="phone" />
-                        </div>
-                        <div class="mb-3">
-                          <label for="form-label">Full Name:</label>
-                          <form:input type="text" class="form-control" path="fullName" />
-                        </div>
-                        <div class="mb-3">
-                          <label for="form-label">Address:</label>
-                          <form:input type="text" class="form-control" path="address" />
-                        </div>
-                        <button type="submit" class="btn btn-primary">Create</button>
-                      </form:form>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">ID: ${user.id}</li>
+                          <li class="list-group-item">Email: ${user.email}</li>
+                          <li class="list-group-item">FullName: ${user.fullName}</li>
+                          <li class="list-group-item">Address: ${user.address}</li>
+                        </ul>
+                      </div>
+                      <a href="/admin/user" class="btn btn-success mt-3">Back</a>
+
                     </div>
+
                   </div>
+
                 </div>
               </div>
             </main>
