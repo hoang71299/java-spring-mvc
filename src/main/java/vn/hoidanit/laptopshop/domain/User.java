@@ -4,8 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity // biến class thành table
+@Table(name = "users")
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +20,13 @@ public class User {
   private String fullName;
   private String address;
   private String phone;
+
+  private String avatar;
+
+  // User many -> to one --> role
+  @ManyToOne
+  @JoinColumn(name = "role_id")
+  private Role role;
 
   public long getId() {
     return id;
@@ -65,10 +76,18 @@ public class User {
     this.phone = phone;
   }
 
+  public String getAvatar() {
+    return avatar;
+  }
+
+  public void setAvatar(String avatar) {
+    this.avatar = avatar;
+  }
+
   @Override
   public String toString() {
     return "User [id=" + id + ", email=" + email + ", password=" + password + ", fullName=" + fullName + ", address="
-        + address + ", phone=" + phone + "]";
+        + address + ", phone=" + phone + ", avatar=" + avatar + "]";
   }
 
 }
