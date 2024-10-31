@@ -1,4 +1,4 @@
-package vn.hoidanit.laptopshop.services;
+package vn.hoidanit.laptopshop.service;
 
 import java.util.List;
 
