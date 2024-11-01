@@ -65,7 +65,6 @@
                           <label class="form-label">Quantity:</label>
                           <form:input type="number" class="form-control" path="quantity" />
                         </div>
-
                         <div class="mb-3 col-12 col-md-6">
                           <label class="form-label">Factory:</label>
                           <form:select class="form-select" path="factory">
@@ -114,7 +113,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
           crossorigin="anonymous"></script>
         <script src="/js/scripts.js"></script>
-
       </body>
 
       </html>
