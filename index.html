@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="flex flex-col items-center p-6 space-y-4">
+    <!-- Todo Input Section -->
+    <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold text-center mb-4">TodoInput</h2>
+      <div class="flex items-center mb-4">
+        <input type="text" placeholder="New Todo"
+          class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" />
+      </div>
+      <button class="w-full py-2 text-white bg-teal-500 rounded-md hover:bg-teal-600">
+        Add new task
+      </button>
+    </div>
+
+    <!-- Todo List Section -->
+    <div class="w-full max-w-lg mt-6 p-4 bg-white rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold text-center mb-4">TodoList</h2>
+      <div class="flex justify-around mb-4">
+        <button class="px-4 py-2 text-white bg-teal-500 rounded-md hover:bg-teal-600">All</button>
+        <button class="px-4 py-2 text-white bg-teal-500 rounded-md hover:bg-teal-600">Done</button>
+        <button class="px-4 py-2 text-white bg-teal-500 rounded-md hover:bg-teal-600">Todo</button>
+      </div>
+
+      <!-- Todo Items -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between p-4 border rounded-md">
+          <span class="line-through text-red-500">Learn ReactJS basics</span>
+          <div class="flex space-x-2">
+            <input type="checkbox" checked class="w-4 h-4 text-teal-500 rounded-md" />
+            <button class="text-yellow-500 hover:text-yellow-600">✏️</button>
+            <button class="text-red-500 hover:text-red-600">🗑️</button>
+          </div>
+        </div>
+        <!-- Additional tasks would go here following the same structure -->
+      </div>
+
+      <!-- Delete Buttons -->
+      <div class="flex justify-between mt-6">
+        <button class="px-4 py-2 text-white bg-red-500 rounded-md hover:bg-red-600">Delete done tasks</button>
+        <button class="px-4 py-2 text-white bg-red-500 rounded-md hover:bg-red-600">Delete all tasks</button>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
