@@ -25,7 +25,10 @@ public class HomePageController {
   private final UserService userService;
   private final PasswordEncoder passwordEncoder;
 
-  public HomePageController(ProductService productService, UserService userService, PasswordEncoder passwordEncoder) {
+  public HomePageController(
+      ProductService productService,
+      UserService userService,
+      PasswordEncoder passwordEncoder) {
     this.productService = productService;
     this.userService = userService;
     this.passwordEncoder = passwordEncoder;
@@ -47,10 +50,12 @@ public class HomePageController {
   @PostMapping("/register")
   public String handleRegister(@ModelAttribute("registerUser") @Valid RegisterDTO registerDTO,
       BindingResult bindingResult) {
-    List<FieldError> errors = bindingResult.getFieldErrors();
-    for (FieldError error : errors) {
-      System.out.println(">>>>" + error.getField() + " - " +
-          error.getDefaultMessage());
+    // List<FieldError> errors = bindingResult.getFieldErrors();
+    // for (FieldError error : errors) {
+    // System.out.println(error.getField() + " - " + error.getDefaultMessage());
+    // }
+    if (bindingResult.hasErrors()) {
+      return "client/auth/register";
     }
     User user = this.userService.registerDTOtoUser(registerDTO);
 
@@ -58,9 +63,10 @@ public class HomePageController {
 
     user.setPassword(hashPassword);
     user.setRole(this.userService.getRoleByName("USER"));
-
+    // save
     this.userService.handleSaveUser(user);
     return "redirect:/login";
+
   }
 
   @GetMapping("/login")
