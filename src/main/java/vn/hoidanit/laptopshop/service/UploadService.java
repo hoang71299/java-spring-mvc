@@ -38,7 +38,6 @@ public class UploadService {
       finalName = System.currentTimeMillis() + "-" + file.getOriginalFilename();
 
       File serverFile = new File(dir.getAbsolutePath() + File.separator + finalName);
-      System.out.println(serverFile);
       // uuid
 
       BufferedOutputStream stream = new BufferedOutputStream(
