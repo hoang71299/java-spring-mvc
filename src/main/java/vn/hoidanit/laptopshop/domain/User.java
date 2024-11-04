@@ -28,7 +28,6 @@ public class User {
 
   @NotNull
   @Size(min = 2, message = "password phải có tối thiểu 2 ký tự")
-
   private String password;
 
   @NotNull
