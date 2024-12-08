@@ -1,16 +1,11 @@
-FROM maven:3-openjdk-17 AS build
+FROM maven:3.8.4-openjdk-17-slim AS build
 WORKDIR /app
-
-COPY . .
+COPY pom.xml .
+COPY src ./src
 RUN mvn clean package -DskipTests
-
-
-# Run stage
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-
-COPY --from=build /app/target/DrComputer-0.0.1-SNAPSHOT.war drcomputer.war
-EXPOSE 8080 
-
-ENTRYPOINT ["java","-jar","drcomputer.war"]
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
